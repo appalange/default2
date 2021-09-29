@@ -4,6 +4,7 @@ var roleBuilder = require('role.builder');
 
 module.exports.loop = function () {
 
+    // GITHUB 2.0
 	for(var name in Game.rooms) {
         console.log('Room "'+name+'" has '+Game.rooms[name].energyAvailable+' energy');
     }
