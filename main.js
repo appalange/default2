@@ -58,6 +58,15 @@ module.exports.loop = function () {
         }
     }
 
+    var warriors = _.filter(Game.creeps, (creep) => creep.memory.role == 'warrior');
+    var repairers = _.filter(Game.creeps, (creep) => creep.memory.role == 'repair');
+    var lorries = _.filter(Game.creeps, (creep) => creep.memory.role == 'lorry');
+    var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+    var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
+    var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
+    var hybrids = _.filter(Game.creeps, (creep) => creep.memory.role == 'hybrid');
+    var miners = _.filter(Game.creeps, (creep) => creep.memory.role == 'miner');
+
     // De variabelen om het maximale aantal creeps te bepalen.
     let noHybrids = 1;
     let noHarvesters = 0;
@@ -69,7 +78,6 @@ module.exports.loop = function () {
     let noWarriors = 10; //10
 
     // Spawnen van de warriors
-    var warriors = _.filter(Game.creeps, (creep) => creep.memory.role == 'warrior');
 
     if(warriors.length < noWarriors) {
         console.log('Warriors: ' + warriors.length + '/' + noWarriors);
@@ -79,7 +87,6 @@ module.exports.loop = function () {
     }
 
     // Spawnen van de repairers
-    var repairers = _.filter(Game.creeps, (creep) => creep.memory.role == 'repair');
 
     if(repairers.length < noRepairer) {
         console.log('Repairers: ' + repairers.length + '/' + noRepairer);
@@ -89,7 +96,6 @@ module.exports.loop = function () {
     }
 
     // Spawnen van de lorries
-    var lorries = _.filter(Game.creeps, (creep) => creep.memory.role == 'lorry');
 
     if(lorries.length < noLorries) {
         console.log('Lorries: ' + lorries.length + '/' + noLorries);
@@ -99,7 +105,6 @@ module.exports.loop = function () {
     }
 
     // Spawnen van de harvesters
-    var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
 
     if(harvesters.length < noHarvesters) {
         console.log('Harvesters: ' + harvesters.length + '/' + noHarvesters);
@@ -109,7 +114,6 @@ module.exports.loop = function () {
     }
 
     // Spawnen van de builders
-	var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
 
     if(builders.length < noBuilders) {
         console.log('Builders: ' + builders.length + '/' + noBuilders);
@@ -119,7 +123,6 @@ module.exports.loop = function () {
     }
 
     // Spawnen van de upgraders
-	var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
 
     if(upgraders.length < noUpgraders) {
         console.log('Upgraders: ' + upgraders.length + '/' + noUpgraders);
@@ -243,7 +246,6 @@ module.exports.loop = function () {
     //console.log('Current Warrior Body Cost: ' + bodyCostWarrior);
 
     // Spawnen van de hybrids
-    var hybrids = _.filter(Game.creeps, (creep) => creep.memory.role == 'hybrid');
 
     if(hybrids.length < noHybrids) {
         console.log('Hybrids: ' + hybrids.length + '/' + noHybrids);
@@ -252,7 +254,7 @@ module.exports.loop = function () {
             {memory: {role: 'hybrid'}});
     }
 
-    var miners = _.filter(Game.creeps, (creep) => creep.memory.role == 'miner');
+    // Spawnen van de miners
 
     if(miners.length < noMiners) {
         console.log('Miners: ' + miners.length + '/' + noMiners);
